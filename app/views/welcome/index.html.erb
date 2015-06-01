@@ -1,0 +1,17 @@
+<h1>你好,欢迎来到有爱的密码破译杀必死！</h1>
+<p color='red'>Welcome to research me!</p>
+<p>
+	<%= form_tag({:action => 'transfer'},{:method => :post}) do%>
+		请输入要翻译的数字密码：<%= text_field_tag 'num','',size: 60 %>
+		<%= submit_tag("转换为文字") %>
+	<% end %>
+</p>
+
+<p>
+	<%= form_tag({:action => 'generate'},{:method => :post}) do%>
+		请输入要生成的英语（不要有空格）：<%= text_field_tag 'code','',size: 60 %>
+		<%= submit_tag("转换为密码") %>
+	<% end %>
+</p>
+
+<h2><%= @result %></h2>
