@@ -1,19 +1,22 @@
-class WelcomeController < ApplicationController  
-  
+class WelcomeController < ApplicationController
+
   def index
-    #@result     
+    #@result
   end
-  
+
+  def lovetype
+  end
+
   def transfer
     @num = params[:num]
     #begin
       @result = Transfer.numtocode(@num)
     #rescue
       #@result = "输入有误"
-    #ensure  
+    #ensure
     render :action => 'index'
   end
-  
+
   def generate
     @code = params[:code]
     #begin
@@ -51,7 +54,7 @@ module Transfer
     end
     return p
   end
-  
+
   def self.codetonum(code)
     num = ""
     codeinput = code
@@ -59,7 +62,7 @@ module Transfer
       num = num + @codetonumtable[item]
     end
     return num
-  end  
+  end
 
 end
 
